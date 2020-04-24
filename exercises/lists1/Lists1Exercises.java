@@ -4,6 +4,12 @@ public class Lists1Exercises {
       * to change. */
     public static IntList incrList(IntList L, int x) {
         /* Your code here. */
+        IntList L1 = L;
+        while(L.rest != null){
+            L = new IntList(L1.first + x, L1.rest);
+            L1 = L1.rest;
+            System.out.println(L.size());
+        }
         return L;        
     }
 
@@ -12,6 +18,10 @@ public class Lists1Exercises {
       * the 'new' keyword. */
     public static IntList dincrList(IntList L, int x) {
         /* Your code here. */
+        while(L.rest != null){
+            L.first += x;
+            L = L.rest;
+        }
         return L;
     }
 
@@ -19,9 +29,9 @@ public class Lists1Exercises {
         IntList L = new IntList(5, null);
         L.rest = new IntList(7, null);
         L.rest.rest = new IntList(9, null);
-
-        System.out.println(L.size());
-        System.out.println(L.iterativeSize());
+        IntList result = (Lists1Exercises.incrList(L, 3));
+        //System.out.println(result.size());
+        //System.out.println(L.iterativeSize());
 
         // Test your answers by uncommenting. Or copy and paste the
         // code for incrList and dincrList into IntList.java and
