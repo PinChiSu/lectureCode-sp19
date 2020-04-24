@@ -5,10 +5,10 @@ public class Lists1Exercises {
     public static IntList incrList(IntList L, int x) {
         /* Your code here. */
         IntList L1 = L;
-        while(L.rest != null){
-            L = new IntList(L1.first + x, L1.rest);
-            L1 = L1.rest;
-            System.out.println(L.size());
+        int i = 0;
+        while(i < L1.size()){
+            L = new IntList(L1.get(i) + x, null);
+            i++
         }
         return L;        
     }
@@ -29,8 +29,7 @@ public class Lists1Exercises {
         IntList L = new IntList(5, null);
         L.rest = new IntList(7, null);
         L.rest.rest = new IntList(9, null);
-        IntList result = (Lists1Exercises.incrList(L, 3));
-        //System.out.println(result.size());
+        System.out.println(incrList(L, 3));
         //System.out.println(L.iterativeSize());
 
         // Test your answers by uncommenting. Or copy and paste the
